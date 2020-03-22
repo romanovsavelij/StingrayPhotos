@@ -24,4 +24,8 @@ def home(request):
             images.append(image)
             picture_ind += 1
     images = Image.objects.all()
-    return render(request, 'home.html', {'images': images})
+    return render(request, 'home.html', {
+        'images': images,
+        'images_bool': bool(images),
+        'not_img_bool': not bool(images),
+    })
