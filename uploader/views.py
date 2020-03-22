@@ -16,12 +16,10 @@ def home(request):
     else:
         files = request.FILES.getlist('images')
         # print(f'{len(files)} files loaded!')
-        images = []
         picture_ind = 0
         for f in files:
+            # print(f'picture_ind: {picture_ind}')
             image = Image(id=int(f'{persons_key}{picture_ind}'), picture=f)
             image.save()
-            images.append(image)
             picture_ind += 1
-    images = Image.objects.all()
-    return render(request, 'home.html', {'images': images})
+    return render(request, 'home.html')

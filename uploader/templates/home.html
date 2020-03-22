@@ -5,7 +5,4 @@
         <input type="file" name="images" multiple/>
         <input type="submit" name="submit" value="Upload" />
     </form>
-    {% for img in images %}
-        {{forloop.counter}}.<a href="{{ img.picture.url }}">{{ img.picture.name }}</a><hr />
-    {% endfor %}
 </div>

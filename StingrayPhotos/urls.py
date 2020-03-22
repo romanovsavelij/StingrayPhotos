@@ -18,9 +18,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from uploader import views as uploader_views
-
+from presenter import views as presenter_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', uploader_views.home, name='imageupload'),
+    path('upload/', uploader_views.home, name='uploading_images'),
+    path('show/', presenter_views.home, name='showing_images'),
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

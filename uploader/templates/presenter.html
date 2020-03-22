@@ -1,0 +1,10 @@
+<div style="padding:40px;margin:40px;border:1px solid #ccc">
+    <h1>Показ фото</h1>
+    <img name="main_picture" alt="main_picture" src={{ main_picture_src }}>
+    <img name="next_picture" alt="next_picture">
+    <h1></h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Следующее фото</button>
+    </form>
+</div>
