@@ -18,9 +18,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from uploader import views as uploader_views
-
+from auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', uploader_views.home, name='imageupload'),
-] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+    path('', auth_views.auth, name='auth_index'),
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
