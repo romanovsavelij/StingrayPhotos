@@ -126,57 +126,24 @@ input:focus {outline:0;}
             Введите код
         </span>
     </div>
+    <form method="get" action="upload/">
     <div class="text-center container" style="margin-bottom: 2.5rem;">
-        <div class="num_container">
+        <div class="container text-center">
 
-                <table style="text-align: center; display: inline-block;">
-                    <tr>
-                        <td><input type="text" class="number_input" autofocus name="digit1" id="inp1" onkeyup="form_process(1)"></td>
-                    </tr>
-                    <tr>
-                        <td><div class="underline" id="und1"></div></td>
-                    </tr>
-                </table>
-            <table style="text-align: center; display: inline-block;">
-                <tr>
-                    <td><input type="text" class="number_input" name="digit2" id="inp2" onkeyup="form_process(2)"></td>
-                </tr>
-                <tr>
-                    <td><div class="underline"></div></td>
-                </tr>
-            </table>
-            <table style="text-align: center; display: inline-block;">
-                <tr>
-                    <td><input type="text" class="number_input" name="digit1" id="inp3" onkeyup="form_process(3)"></td>
-                </tr>
-                <tr>
-                    <td><div class="underline"></div></td>
-                </tr>
-            </table>
-            <table style="text-align: center; display: inline-block;">
-                <tr>
-                    <td><input type="text" class="number_input" name="digit1" id="inp4" onkeyup="form_process(4)"></td>
-                </tr>
-                <tr>
-                    <td><div class="underline"></div></td>
-                </tr>
-            </table>
+                <input id="digit_input" name="key"><br>
 
-
+            <span><div class="long_underline"></div></span>
         </div>
-
     </div>
     <div class="container" class="middle_place"></div>
     <div class="container text-center">
-        <button class="btn enter_button">Войти</button>
+        <button class="btn enter_button" type="submit">Войти</button>
     </div>
+    </form>
     <div class="container text-center" style="margin-top: 1rem;">
         <span class="unable_to_enter"  onclick="$('#exampleModal').modal()">Не удается войти?</span>
     </div>
-    <div class="container text-center">
-        <input id="digit_input"><br>
-        <span><div class="long_underline"></div></span>
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
