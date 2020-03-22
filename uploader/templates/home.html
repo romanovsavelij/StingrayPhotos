@@ -66,6 +66,7 @@
         #add_photo_label{
             font-family: "ALS Sector Regular", "Helvetica Neue", Arial;
             margin-bottom: 1rem;
+            display: none;
         }
         #begin_show {
             margin-top: 16.5rem;
@@ -100,7 +101,7 @@
                                 <thead>
                                 <tr>
                                     <th>Название и путь</th>
-                                    <th>Миниатюра{{ not_img_bool }}</th>
+                                    <th>Миниатюра</th>
                                 </tr>
                                 </thead>
                                 {% for img in images %}
