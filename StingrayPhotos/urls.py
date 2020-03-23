@@ -20,10 +20,12 @@ from django.conf.urls.static import static
 from uploader import views as uploader_views
 from auth import views as auth_views
 from get_key import views as get_key_views
+from get_image import views as get_image_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', uploader_views.home, name='imageupload'),
     path('', auth_views.auth, name='auth_index'),
-    path('get_key/', get_key_views.home, name='get_key')
+    path('get_key/', get_key_views.home, name='get_key'),
+    path('get_image/', get_image_views.home, name='get_image'),
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
