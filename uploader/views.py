@@ -7,23 +7,23 @@ from uploader.models import Image
 
 persons_key = 0
 
+
 def home(request):
     global persons_key
-    # print(f'person_key: {persons_key}')
     if request.method == 'GET':
         persons_key = request.GET.get('key', 1111)
-        # image = Image.objects.get(id=int(f'{persons_key}{picture_ind}'))
     else:
+        # saving loaded pictures
         files = request.FILES.getlist('images')
-        # print(f'{len(files)} files loaded!')
-        images = []
         picture_ind = 0
         for f in files:
-            image = Image(id=int(f'{persons_key}{picture_ind}'), picture=f)
+            image = Image(persons_key=persons_key, picture=f, picture_ind=picture_ind)
             image.save()
-            images.append(image)
             picture_ind += 1
-    images = Image.objects.all()
+
+    # getting images with such a persons_key
+    images = list(Image.objects.filter(persons_key=persons_key))
+
     return render(request, 'home.html', {
         'images': images,
         'images_bool': bool(images),
