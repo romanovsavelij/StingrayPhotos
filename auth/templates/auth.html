@@ -126,11 +126,11 @@ input:focus {outline:0;}
             Введите код
         </span>
     </div>
-    <form method="get" action="upload/">
+    <form method="get" action="upload/" onsubmit="return form_validation();">
     <div class="text-center container" style="margin-bottom: 2.5rem;">
         <div class="container text-center">
 
-                <input id="digit_input" name="key"><br>
+                <input id="digit_input" name="key" onkeyup="form_process('digit_input')"><br>
 
             <span><div class="long_underline"></div></span>
         </div>
@@ -159,7 +159,7 @@ input:focus {outline:0;}
                     </button>
                 </div>
                 <div class="modal-body">
-                    Проверьте, пожалуйста следующее:
+                    Проверьте, пожалуйста, следующее:
                     <ol>
                         <li>Вы не ошиблись при вводе кода и вводите именно тот код, который показывает Вас телевизор.</li>
                         <li>На компьютере нет проблем с интернетом.</li>
@@ -169,35 +169,53 @@ input:focus {outline:0;}
                     Если проблема не решилась, напишите нам, мы ответим в течение нескольких дней.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Написать в поддержку</button>
+                    <a href="mailto:mp.lobanov@yandex.ru"><button type="button" class="btn btn-secondary" href="mailto:mp.lobanov@yandex.ru">Написать в поддержку</button></a>
                     <button type="button" class="btn btn-primary" onclick="$('#exampleModal').modal('hide')">Закрыть</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Введите ровно 4 цифры!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Проверьте, пожалуйста, следующее:
+                    <ol>
+                        <li>Вы ввели код ровно из 4 символов.</li>
+                        <li>Код содержит только цифры</li>
+                        <li>Код совпадает с тем, что указан на экране ТВ</li>
+                        <li>Телевизор не выводит содержательного сообщения об ошибке.</li>
+                    </ol>
+                    Если проблема не решилась, напишите нам, мы ответим в течение нескольких дней.
+                </div>
+                <div class="modal-footer">
+                    <a href="mailto:mp.lobanov@yandex.ru"><button type="button" class="btn btn-secondary">Написать в поддержку</button></a>
+                    <button type="button" class="btn btn-primary" onclick="$('#errorModal').modal('hide')">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script>
-        function form_process(id, event) {
-            //window.alert(id.toString() + " has changed!");
-
-            console.log(id.toString() + " has changed!");
-            if (id != 4) {
-                if (document.getElementById("inp" + (id).toString()).value.length == 1) {
-                    document.getElementById("inp" + (id + 1).toString()).focus();
-                    //console.log("inp" + (id + 1).toString());
-                    return;
-                }
+        function form_process(id) {
+            if (document.getElementById(id).value.length > 4) {
+                document.getElementById(id).value = document.getElementById(id).value.substr(0, 4);
             }
+        }
 
-            if(id != 1) {
-                if (document.getElementById("inp" + (id).toString()).value.length == 0){
-                    document.getElementById("inp" + (id - 1).toString()).focus();
-                    return;
-                }
+        function form_validation() {
+            if (document.getElementById("digit_input").value.length != 4){
+                $('#errorModal').modal();
+                return false;
             }
-
         }
     </script>
 </body>
