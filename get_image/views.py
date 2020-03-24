@@ -28,7 +28,7 @@ def home(request):
         picture_src = '.' + image.picture.url
     except IndexError:
         # there are no images with such a persons_key
-        picture_src = './static/hophei.jpg'
+        picture_src = './static/FileNotFound.png'
 
     with open(picture_src, "rb") as f:
         return HttpResponse(f.read(), content_type="image/jpeg")
