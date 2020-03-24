@@ -106,7 +106,7 @@
                                 </thead>
                                 {% for img in images %}
                                     <tr>
-                                        <td><a href="{{ img.picture.url }}">{{ img.picture.url }}</a> </td>
+                                        <td><a href="{{ img.picture.url }}">{{ img.picture.name }}</a> </td>
                                         <td><img src="{{ img.picture.url }}" class="mini_img"></td>
                                     </tr>
                                 {% endfor %}
@@ -198,7 +198,7 @@
                             <form action="#" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <input type="file" name="images" multiple style="display: none" id="images">
-                                <label for="images" class="upload_label">Выбрать файлыпшк </label>
+                                <label for="images" class="upload_label">Выбрать файлы</label>
                                 <button type="submit" class="upload_button" name="submit">Загрузить</button>
                             </form>
                         </div>
