@@ -1,11 +1,13 @@
-from django.shortcuts import render
 import random
 import time
 from django.http import JsonResponse
+from typing import Final
+
+MIN_KEY: Final = 1000
+MAX_KEY: Final = 9999
+
 
 def home(request):
     random.seed(time.time())
-    key = random.randint(1000, 9999)
+    key = random.randint(MIN_KEY, MAX_KEY)
     return JsonResponse({'key': key})
-
-# Create your views here.

@@ -1,4 +1,3 @@
-# Project exclude paths
 /venv/
 media/*
 StingrayPhotos/__pycache__
@@ -7,4 +6,7 @@ uploader/__pycache__/
 get_key/__pycache__/
 get_image/__pycache__/
 uploader/migrations/__pycache__/
+auth/migrations/__pycache__/
+get_image/migrations/__pycache__/
+get_key/migrations/__pycache__/
 db.sqlite3
