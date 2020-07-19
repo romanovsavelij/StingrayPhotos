@@ -203,7 +203,6 @@ input:focus {outline:0;}
         </div>
     </div>
 
-
     <script>
         function form_process(id) {
             if (document.getElementById(id).value.length > 4) {
@@ -212,7 +211,7 @@ input:focus {outline:0;}
         }
 
         function form_validation() {
-            if (document.getElementById("digit_input").value.length != 4){
+            if (!document.getElementById("digit_input").value.match(/^([0-9]{4})$/)) {
                 $('#errorModal').modal();
                 return false;
             }

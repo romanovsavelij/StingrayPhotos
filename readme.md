@@ -6,10 +6,11 @@ Stingray Photos is an api service, written on Django. It is used for uploading p
 
 ## Install
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
+Use the package manager [pip3](https://pip.pypa.io/en/stable/) to install.
+Python version should be at least 3.8.
 
 ```shell
-$ pip install django
+$ pip3 install -r requirements.txt
 ```
 
 ## Run
