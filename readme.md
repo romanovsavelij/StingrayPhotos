@@ -102,6 +102,31 @@ Upload selected files
 
   * **Code:** 200 <br />
   
+* **Error Response:**
+INVALID_REQUEST_TYPE_MESSAGE = "GET or POST request expected"
+  * **Code:** 400 Bad Request <br />
+    **Content:** `Expected key in request`
+    
+  * **Code:** 422 UNPROCESSABLE_ENTITY <br />
+    **Content:** `Uploading file size limit exceeded. Try to compress your image`
+
+### Upload files (Other HTTP methods)
+Upload selected files
+
+* **URL**
+
+  /upload/
+
+* **Method:**
+
+  `PUT` | `DELETE`
+  
+* **Error Response:**
+    
+  * **Code:** 405 METHOD_NOT_ALLOWED <br />
+    **Content:** `GET or POST request expected`
+  
+
 ### Get image
 Get uploaded images by your code. Returns one of the uploaded images.
 If multiple images where uploaded, they will be returned 
@@ -125,3 +150,7 @@ following round-robin strategy.
 
   * **Code:** 200 <br />
     **Content:** Image
+    
+  If there are no images, default image will be returned:
+  ![image](https://user-images.githubusercontent.com/32338211/87884397-c9aef880-ca16-11ea-8eb5-c32def672ac4.png)
+
