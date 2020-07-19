@@ -24,7 +24,7 @@ from get_image import views as get_image_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', uploader_views.home, name='image_upload'),
+    path('upload/', uploader_views.UploadView.as_view(), name='image_upload'),
     path('', auth_views.auth, name='auth_index'),
     path('get_key/', get_key_views.home, name='get_key'),
     path('get_image/', get_image_views.home, name='get_image'),

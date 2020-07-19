@@ -3,9 +3,14 @@ from http import HTTPStatus as Status
 from io import BytesIO
 from utils.get_unique_key import get_unique_key
 from utils.memory import TEN_MEGABYTES_IN_BYTES
+from utils.create_file import create_file
 
 
 class UploadTestCase(TestCase):
+    def setUp(self):
+        self.img1 = create_file('first_file')
+        self.img2 = create_file('second_file')
+
     def test_no_images(self):
         key = get_unique_key()
 
@@ -17,13 +22,7 @@ class UploadTestCase(TestCase):
     def test_images_count(self):
         key = get_unique_key()
 
-        img1 = BytesIO(b'my_binary_data')
-        img1.name = 'my_image.jpg'
-
-        img2 = BytesIO(b'my_binary_data')
-        img2.name = 'my_image.jpg'
-
-        response = self.client.post(f'/upload/?key={key}', {'images': (img1, img2)})
+        response = self.client.post(f'/upload/?key={key}', {'images': (self.img1, self.img2)})
         self.assertEqual(response.status_code, Status.OK)
 
         response = self.client.get(f'/upload/?key={key}')
@@ -35,20 +34,19 @@ class UploadTestCase(TestCase):
         key = get_unique_key()
 
         file_bytes_count = TEN_MEGABYTES_IN_BYTES + 1
-        img = BytesIO(bytes('c' * file_bytes_count, 'utf8'))
-        img.name = 'big_image.jpg'
+        big_img = create_file('c' * file_bytes_count)
 
-        response = self.client.post(f'/upload/?key={key}', {'images': img})
+        response = self.client.post(f'/upload/?key={key}', {'images': big_img})
         self.assertEqual(response.status_code, Status.UNPROCESSABLE_ENTITY)
 
     def test_wrong_http_method(self):
         key = get_unique_key()
 
-        response = self.client.put(f'/upload/?key={key}')
-        self.assertEqual(response.status_code, Status.BAD_REQUEST)
+        response = self.client.put(f'/upload/?key={key}', {})
+        self.assertEqual(response.status_code, Status.METHOD_NOT_ALLOWED)
 
         response = self.client.delete(f'/upload/?key={key}')
-        self.assertEqual(response.status_code, Status.BAD_REQUEST)
+        self.assertEqual(response.status_code, Status.METHOD_NOT_ALLOWED)
 
     def test_no_key(self):
         response = self.client.get(f'/upload/')
