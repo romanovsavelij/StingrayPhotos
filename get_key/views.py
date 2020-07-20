@@ -1,10 +1,9 @@
 import random
 import time
 from django.http import JsonResponse
-from typing import Final
 
-MIN_KEY: Final = 1000
-MAX_KEY: Final = 9999
+MIN_KEY = 1000
+MAX_KEY = 9999
 
 
 def home(request):
