@@ -6,131 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Stingray Meditation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="templates/main.css" rel="stylesheet">
     <style>
-        @font-face {
-    font-family: "ALS Sector Regular";
-    src: local("fonts/ALS_Sector-Regular.otf");
-}
-@font-face {
-    font-family: "ALS Sector Bold";
-    src: local("fonts/ALS_Sector-Bold.otf");
-}
-@font-face {
-    font-family: "Museo Sans Cyrl 300";
-    src: local("fonts/MuseoSansCyrl-300.ttf");
-}
-@font-face {
-    font-family: "Museo Sans Cyrl 700";
-    src: local("fonts/MuseoSansCyrl-700.ttf");
-}
-.header {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-}
-.header_bold {
-    font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
-}
-.header_reg {
-    font-family: "ALS Sector Regular", "Helvetica Neue", Arial;
-}
-#up_place {
-    height: 60px;
-    display: block;
-}
-#enter_code {
-    font-family: "Museo Sans Cyrl 300", "Helvetica Neue", Arial;
-    font-size: 2rem;
-}
-.middle_place {
-    height: 30px;
-    display: block;
-}
-.number_input {
-    height: 6rem;
-    width: 4rem;
-    border: transparent;
-    font-size: 5rem;
-    text-align: center;
-    font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
-}
-.underline {
-    width: 4rem;
-    height: 0.2rem;
-    background-color: #D8D8D8;
-    display: inline-block;
-    text-align: center;
-    margin-right: 0.5rem;
-    position: relative;
-    top:-2rem;
-}
-.num_container {
-    display: inline;
-    text-align: center;
-    left: 50%;
-    margin-bottom: 3rem;
-}
-.enter_button{
-    background-color: #4C45B3;
-    font-size: 2rem;
-    font-family: "Museo Sans Cyrl 700", "Helvetica Neue", Arial;
-    color: white;
-    border-radius: 2rem;
-    padding: 0.25rem 2rem 0.25rem 2rem;
-}
-.enter_button:hover{
-    color: white;
-    text-decoration: none;
-}
-input:focus {outline:0;}
-.unable_to_enter{
-    font-family: "Museo Sans Cyrl 300", "Helvetica Neue", Arial;
-    font-size: 1.2rem;
-    color: #7D7D7D;
-    cursor: pointer;
-}
-#digit_input {
-    height: 6rem;
-    width: 22rem;
-    border: transparent;
-    font-size: 5rem;
-    text-align: left;
-    font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
-    letter-spacing: 2.2rem;
-    padding-left: 0rem;
-    text-align: center;
-}
-.long_underline {
-    width: 20rem;
-    height: 0.2rem;
-    background-color: #D8D8D8;
-    display: inline-block;
-    text-align: center;
-    margin-right: 0.5rem;
-    position: relative;
-    top:-2rem;
-}
+        .header {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .header_bold {
+            font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
+        }
+
+        .header_reg {
+            font-family: "ALS Sector Regular", "Helvetica Neue", Arial;
+        }
+
+        #up_place {
+            height: 60px;
+            display: block;
+        }
+
+        #enter_code {
+            font-family: "Museo Sans Cyrl 300", "Helvetica Neue", Arial;
+            font-size: 2rem;
+        }
+
+        .middle_place {
+            height: 30px;
+            display: block;
+        }
+
+
+        .enter_button {
+            background-color: #4C45B3;
+            font-size: 2rem;
+            font-family: "Museo Sans Cyrl 700", "Helvetica Neue", Arial;
+            color: white;
+            border-radius: 2rem;
+            padding: 0.25rem 2rem 0.25rem 2rem;
+        }
+
+        .enter_button:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        .unable_to_enter {
+            font-family: "Museo Sans Cyrl 300", "Helvetica Neue", Arial;
+            font-size: 1.2rem;
+            color: #7D7D7D;
+            cursor: pointer;
+        }
+
+        #digit_input {
+            height: 6rem;
+            width: 22rem;
+            border: transparent;
+            font-size: 5rem;
+            text-align: left;
+            font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
+            letter-spacing: 2.2rem;
+            padding-left: 0rem;
+            text-align: center;
+        }
+
+        .long_underline {
+            width: 20rem;
+            height: 0.2rem;
+            background-color: #D8D8D8;
+            display: inline-block;
+            text-align: center;
+            margin-right: 0.5rem;
+            position: relative;
+            top: -2rem;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container" id="up_place"></div>
-    <div class="header container container-fluid text-center">
-        <span class="header_reg">Stingray</span>
-        <span class="header_bold">Photos</span>
-    </div>
-    <div class="container" class="middle_place"></div>
-    <div class="container-fluid container text-center">
+<div class="container" id="up_place"></div>
+<div class="header container container-fluid text-center">
+    <span class="header_reg">Stingray</span>
+    <span class="header_bold">Photos</span>
+</div>
+<div class="container" class="middle_place"></div>
+<div class="container-fluid container text-center">
         <span id="enter_code">
             Введите код
         </span>
-    </div>
-    <form method="get" action="upload/" onsubmit="return form_validation();">
+</div>
+<form method="get" action="upload/" onsubmit="return form_validation();">
     <div class="text-center container" style="margin-bottom: 2.5rem;">
         <div class="container text-center">
 
-                <input id="digit_input" name="key" onkeyup="form_process('digit_input')"><br>
+            <input id="digit_input" name="key" onkeyup="form_process('digit_input')"><br>
 
             <span><div class="long_underline"></div></span>
         </div>
@@ -139,83 +114,98 @@ input:focus {outline:0;}
     <div class="container text-center">
         <button class="btn enter_button" type="submit">Войти</button>
     </div>
-    </form>
-    <div class="container text-center" style="margin-top: 1rem;">
-        <span class="unable_to_enter"  onclick="$('#exampleModal').modal()">Не удается войти?</span>
-    </div>
+</form>
+<div class="container text-center" style="margin-top: 1rem;">
+    <span class="unable_to_enter" onclick="$('#exampleModal').modal()">Не удается войти?</span>
+</div>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Проблемы со входом</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Проблемы со входом</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Проверьте, пожалуйста, следующее:
+                <ol>
+                    <li>Вы не ошиблись при вводе кода и вводите именно тот код, который показывает Вас телевизор.</li>
+                    <li>На компьютере нет проблем с интернетом.</li>
+                    <li>На телевизоре нет проблем с интернетом.</li>
+                    <li>Телевизор не выводит содержательного сообщения об ошибке.</li>
+                </ol>
+                Если проблема не решилась, напишите нам, мы ответим в течение нескольких дней.
+            </div>
+            <div class="modal-footer">
+                <a href="mailto:mp.lobanov@yandex.ru">
+                    <button type="button" class="btn btn-secondary" href="mailto:mp.lobanov@yandex.ru">Написать в
+                        поддержку
                     </button>
-                </div>
-                <div class="modal-body">
-                    Проверьте, пожалуйста, следующее:
-                    <ol>
-                        <li>Вы не ошиблись при вводе кода и вводите именно тот код, который показывает Вас телевизор.</li>
-                        <li>На компьютере нет проблем с интернетом.</li>
-                        <li>На телевизоре нет проблем с интернетом.</li>
-                        <li>Телевизор не выводит содержательного сообщения об ошибке.</li>
-                    </ol>
-                    Если проблема не решилась, напишите нам, мы ответим в течение нескольких дней.
-                </div>
-                <div class="modal-footer">
-                    <a href="mailto:mp.lobanov@yandex.ru"><button type="button" class="btn btn-secondary" href="mailto:mp.lobanov@yandex.ru">Написать в поддержку</button></a>
-                    <button type="button" class="btn btn-primary" onclick="$('#exampleModal').modal('hide')">Закрыть</button>
-                </div>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="$('#exampleModal').modal('hide')">Закрыть
+                </button>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="errorModalLabel">Введите ровно 4 цифры!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Проверьте, пожалуйста, следующее:
-                    <ol>
-                        <li>Вы ввели код ровно из 4 символов.</li>
-                        <li>Код содержит только цифры</li>
-                        <li>Код совпадает с тем, что указан на экране ТВ</li>
-                        <li>Телевизор не выводит содержательного сообщения об ошибке.</li>
-                    </ol>
-                    Если проблема не решилась, напишите нам, мы ответим в течение нескольких дней.
-                </div>
-                <div class="modal-footer">
-                    <a href="mailto:mp.lobanov@yandex.ru"><button type="button" class="btn btn-secondary">Написать в поддержку</button></a>
-                    <button type="button" class="btn btn-primary" onclick="$('#errorModal').modal('hide')">Закрыть</button>
-                </div>
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Введите ровно 4 цифры!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Проверьте, пожалуйста, следующее:
+                <ol>
+                    <li>Вы ввели код ровно из 4 символов.</li>
+                    <li>Код содержит только цифры</li>
+                    <li>Код совпадает с тем, что указан на экране ТВ</li>
+                    <li>Телевизор не выводит содержательного сообщения об ошибке.</li>
+                </ol>
+                Если проблема не решилась, напишите нам, мы ответим в течение нескольких дней.
+            </div>
+            <div class="modal-footer">
+                <a href="mailto:mp.lobanov@yandex.ru">
+                    <button type="button" class="btn btn-secondary">Написать в поддержку</button>
+                </a>
+                <button type="button" class="btn btn-primary" onclick="$('#errorModal').modal('hide')">Закрыть</button>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        function form_process(id) {
-            if (document.getElementById(id).value.length > 4) {
-                document.getElementById(id).value = document.getElementById(id).value.substr(0, 4);
-            }
+<script>
+    function form_process(id) {
+        if (document.getElementById(id).value.length > 4) {
+            document.getElementById(id).value = document.getElementById(id).value.substr(0, 4);
         }
+    }
 
-        function form_validation() {
-            if (!document.getElementById("digit_input").value.match(/^([0-9]{4})$/)) {
-                $('#errorModal').modal();
-                return false;
-            }
+    function form_validation() {
+        if (!document.getElementById("digit_input").value.match(/^([0-9]{4})$/)) {
+            $('#errorModal').modal();
+            return false;
         }
-    </script>
+    }
+</script>
 </body>
 </html>

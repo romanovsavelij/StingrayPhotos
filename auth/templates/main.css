@@ -1,41 +1,31 @@
-@font-face {
-    font-family: "ALS Sector Regular";
-    src: local("fonts/ALS_Sector-Regular.otf");
-}
-@font-face {
-    font-family: "ALS Sector Bold";
-    src: local("fonts/ALS_Sector-Bold.otf");
-}
-@font-face {
-    font-family: "Museo Sans Cyrl 300";
-    src: local("fonts/MuseoSansCyrl-300.ttf");
-}
-@font-face {
-    font-family: "Museo Sans Cyrl 700";
-    src: local("fonts/MuseoSansCyrl-700.ttf");
-}
 .header {
     font-size: 4rem;
     margin-bottom: 2rem;
 }
+
 .header_bold {
     font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
 }
+
 .header_reg {
     font-family: "ALS Sector Regular", "Helvetica Neue", Arial;
 }
+
 #up_place {
     height: 60px;
     display: block;
 }
+
 #enter_code {
     font-family: "Museo Sans Cyrl 300", "Helvetica Neue", Arial;
     font-size: 2rem;
 }
+
 .middle_place {
     height: 30px;
     display: block;
 }
+
 .number_input {
     height: 6rem;
     width: 4rem;
@@ -44,6 +34,7 @@
     text-align: center;
     font-family: "ALS Sector Bold", "Helvetica Neue", Arial;
 }
+
 .underline {
     width: 4rem;
     height: 0.2rem;
@@ -52,15 +43,17 @@
     text-align: center;
     margin-right: 0.5rem;
     position: relative;
-    top:-2rem;
+    top: -2rem;
 }
+
 .num_container {
     display: inline;
     text-align: center;
     left: 50%;
     margin-bottom: 3rem;
 }
-.enter_button{
+
+.enter_button {
     background-color: #4C45B3;
     font-size: 2rem;
     font-family: "Museo Sans Cyrl 700", "Helvetica Neue", Arial;
@@ -68,17 +61,23 @@
     border-radius: 2rem;
     padding: 0.25rem 2rem 0.25rem 2rem;
 }
-.enter_button:hover{
+
+.enter_button:hover {
     color: white;
     text-decoration: none;
 }
-input:focus {outline:0;}
-.unable_to_enter{
+
+input:focus {
+    outline: 0;
+}
+
+.unable_to_enter {
     font-family: "Museo Sans Cyrl 300", "Helvetica Neue", Arial;
     font-size: 1.2rem;
     color: #7D7D7D;
     cursor: pointer;
 }
+
 #digit_input {
     height: 6rem;
     width: 22rem;
@@ -90,6 +89,7 @@ input:focus {outline:0;}
     padding-left: 0rem;
     text-align: center;
 }
+
 .long_underline {
     width: 20rem;
     height: 0.2rem;
@@ -98,5 +98,5 @@ input:focus {outline:0;}
     text-align: center;
     margin-right: 0.5rem;
     position: relative;
-    top:-2rem;
+    top: -2rem;
 }
