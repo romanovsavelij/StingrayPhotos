@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from uploader.models import Image
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from http import HTTPStatus as Status
 from django.core.exceptions import ValidationError
 from utils import constants
@@ -8,14 +8,14 @@ from django.views.generic import View
 
 
 class UploadView(View):
-    def get(self, request, *args, **kwargs):
+    def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         persons_key = request.GET.get('key')
         if persons_key is None:
             return HttpResponse(constants.KEY_EXPECTED_MESSAGE, status=Status.BAD_REQUEST)
 
         return UploadView.get_home_page(request, persons_key)
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         persons_key = request.GET.get('key')
         if persons_key is None:
             return HttpResponse(constants.KEY_EXPECTED_MESSAGE, status=Status.BAD_REQUEST)
@@ -36,15 +36,15 @@ class UploadView(View):
         return UploadView.get_home_page(request, persons_key)
 
     @staticmethod
-    def put(request, *args, **kwargs):
+    def put(request: HttpRequest, *args, **kwargs) -> HttpResponse:
         return HttpResponse(constants.INVALID_REQUEST_TYPE_MESSAGE, status=Status.METHOD_NOT_ALLOWED)
 
     @staticmethod
-    def delete(request, *args, **kwargs):
+    def delete(request: HttpRequest, *args, **kwargs) -> HttpResponse:
         return HttpResponse(constants.INVALID_REQUEST_TYPE_MESSAGE, status=Status.METHOD_NOT_ALLOWED)
 
     @staticmethod
-    def get_home_page(request, persons_key):
+    def get_home_page(request: HttpRequest, persons_key: int) -> HttpResponse:
         images = list(Image.objects.filter(persons_key=persons_key))
 
         return render(request, 'home.html', {
@@ -53,11 +53,11 @@ class UploadView(View):
         })
 
     @staticmethod
-    def get_first_adding_picture_ind(persons_key):
+    def get_first_adding_picture_ind(persons_key: int) -> int:
         last_added_ind = 0
         while True:
-            try:
-                image = list(Image.objects.filter(persons_key=persons_key, picture_ind=last_added_ind))[0]
-            except IndexError:
+            images = list(Image.objects.filter(persons_key=persons_key, picture_ind=last_added_ind))
+            if len(images) == 0:
                 return last_added_ind
-            last_added_ind += 1
+            else:
+                last_added_ind += 1

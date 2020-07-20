@@ -1,11 +1,16 @@
 from django.http import HttpResponse
 from uploader.models import Image
+from utils import constants
+from http import HTTPStatus as Status
 
 picture_ind_by_key = {}
 
 
 def home(request):
-    persons_key = request.GET.get('key', 1111)
+    persons_key = request.GET.get('key')
+    if persons_key is None:
+        return HttpResponse(constants.KEY_EXPECTED_MESSAGE, status=Status.BAD_REQUEST)
+
     if persons_key not in picture_ind_by_key:
         picture_ind_by_key.update({persons_key: 0})
     else:

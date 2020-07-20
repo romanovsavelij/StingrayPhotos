@@ -21,6 +21,10 @@ class GetImageTestCase(TestCase):
         self.compare_image_by_key(key, self.img3)
         self.compare_image_by_key(key, self.img1)
 
+    def test_no_key(self):
+        response = self.client.get(f'/get_image/')
+        self.assertEqual(response.status_code, Status.BAD_REQUEST)
+
     def test_multiple_uploads(self):
         key = get_unique_key()
 

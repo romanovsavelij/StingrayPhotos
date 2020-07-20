@@ -103,7 +103,7 @@ Upload selected files
   * **Code:** 200 <br />
   
 * **Error Response:**
-INVALID_REQUEST_TYPE_MESSAGE = "GET or POST request expected"
+
   * **Code:** 400 Bad Request <br />
     **Content:** `Expected key in request`
     
@@ -154,3 +154,7 @@ following round-robin strategy.
   If there are no images, default image will be returned:
   ![image](https://user-images.githubusercontent.com/32338211/87884397-c9aef880-ca16-11ea-8eb5-c32def672ac4.png)
 
+* **Error Response:**
+
+  * **Code:** 400 Bad Request <br />
+    **Content:** `Expected key in request`
