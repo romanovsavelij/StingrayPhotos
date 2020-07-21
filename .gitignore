@@ -12,3 +12,5 @@ get_key/migrations/__pycache__/
 utils/__pycache__/
 .idea/
 db.sqlite3
+.DS_Store
+/uploader/.DS_Store
