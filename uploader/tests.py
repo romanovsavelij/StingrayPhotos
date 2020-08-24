@@ -1,6 +1,5 @@
 from django.test import TestCase
 from http import HTTPStatus as Status
-from io import BytesIO
 from utils.get_unique_key import get_unique_key
 from utils.memory import TEN_MEGABYTES_IN_BYTES
 from utils.create_file import create_file
@@ -22,7 +21,8 @@ class UploadTestCase(TestCase):
     def test_images_count(self):
         key = get_unique_key()
 
-        response = self.client.post(f'/upload/?key={key}', {'images': (self.img1, self.img2)})
+        response = self.client.post(f'/upload/?key={key}',
+                                    {'images': (self.img1, self.img2)})
         self.assertEqual(response.status_code, Status.OK)
 
         response = self.client.get(f'/upload/?key={key}')

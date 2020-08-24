@@ -9,7 +9,8 @@ picture_ind_by_key = {}
 def home(request):
     persons_key = request.GET.get('key')
     if persons_key is None:
-        return HttpResponse(constants.KEY_EXPECTED_MESSAGE, status=Status.BAD_REQUEST)
+        return HttpResponse(constants.KEY_EXPECTED_MESSAGE,
+                            status=Status.BAD_REQUEST)
 
     if persons_key not in picture_ind_by_key:
         picture_ind_by_key.update({persons_key: 0})
@@ -18,11 +19,13 @@ def home(request):
 
     picture_ind = picture_ind_by_key[persons_key]
 
-    images = list(Image.objects.filter(persons_key=persons_key, picture_ind=picture_ind))
+    images = list(Image.objects.filter(persons_key=persons_key,
+                                       picture_ind=picture_ind))
     if len(images) == 0:
         picture_ind_by_key[persons_key] = 0
 
-        first_images = list(Image.objects.filter(persons_key=persons_key, picture_ind=0))
+        first_images = list(Image.objects.filter(persons_key=persons_key,
+                                                 picture_ind=0))
         if len(first_images) == 0:
             picture_src = './static/FileNotFound.png'
         else:

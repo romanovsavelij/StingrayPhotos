@@ -13,7 +13,8 @@ class GetImageTestCase(TestCase):
     def test_no_images(self):
         key = get_unique_key()
 
-        response = self.client.post(f'/upload/?key={key}', {'images': (self.img1, self.img2, self.img3)})
+        images = {'images': (self.img1, self.img2, self.img3)}
+        response = self.client.post(f'/upload/?key={key}', images)
         self.assertEqual(response.status_code, Status.OK)
 
         self.compare_image_by_key(key, self.img1)
@@ -28,10 +29,12 @@ class GetImageTestCase(TestCase):
     def test_multiple_uploads(self):
         key = get_unique_key()
 
-        response = self.client.post(f'/upload/?key={key}', {'images': (self.img1, self.img2)})
+        response = self.client.post(f'/upload/?key={key}',
+                                    {'images': (self.img1, self.img2)})
         self.assertEqual(response.status_code, Status.OK)
 
-        response = self.client.post(f'/upload/?key={key}', {'images': self.img3})
+        response = self.client.post(f'/upload/?key={key}',
+                                    {'images': self.img3})
         self.assertEqual(response.status_code, Status.OK)
 
         self.compare_image_by_key(key, self.img1)
